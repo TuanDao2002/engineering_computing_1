@@ -26,8 +26,8 @@ int main(){
     int temp;
     for (p = arr; p < arr + array_size/2; p++) {
         temp = *p;
-        *p = *(arr + array_size - 1 - p + arr);  // last index minus the current index
-        *(arr + array_size - 1 - p + arr) = temp;  
+        *p = *((arr + array_size - 1) - (p - arr));  // last index minus the current index
+        *((arr + array_size - 1) - (p - arr)) = temp;  
     }
 
     printf("Reverse array:\n");
