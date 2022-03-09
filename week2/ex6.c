@@ -1,20 +1,15 @@
 #include<stdio.h>
 
 int main(){
-    int sum = 0;
-    int i;
+    int num;
     printf("Enter an interger: ");
-    scanf("%d", &i);
+    scanf("%d", &num);
     
-    // not use while in this exercise
-    sum += i % 10;
-    i = i / 10;
+    int last_digit = num % 10;
+    int middle_digit = (num / 10) % 10;
+    int first_digit = num / 100;
 
-    sum += i % 10;
-    i = i / 10;
-
-    sum += i % 10;
-    i = i / 10;
-    printf("The sum of all the digits is: %d", sum);
+    int sum = last_digit + middle_digit + first_digit; 
+    printf("The sum of all the digits is: %d\n", sum);
     return 0;
 }
