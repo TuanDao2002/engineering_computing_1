@@ -12,7 +12,7 @@ int main(){
     printf("\n");
 
     printf("Reverse order:\n");
-    for (p--; p >= arr; p--) { // p-- at the first index as p point beyond array limit
+    for (p--; p >= arr; p--) { // p-- at the first index as p points at '\0' (string termination)
         printf("%d\t", *p);
     }
     printf("\n");
