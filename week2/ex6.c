@@ -5,6 +5,7 @@ int main(){
     printf("Enter an interger: ");
     scanf("%d", &num);
     
+    // solution
     int last_digit = num % 10;
     int middle_digit = (num / 10) % 10;
     int first_digit = num / 100;
