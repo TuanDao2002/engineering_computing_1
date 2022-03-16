@@ -13,6 +13,6 @@ int main() {
     } while(num >= 0);
 
     printf("Sum is %d\n", sum);
-    printf("There are %d positive integers", count);
+    printf("There are %d positive integers\n", count);
     return 0;
 }
