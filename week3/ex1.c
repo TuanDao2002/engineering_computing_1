@@ -22,5 +22,7 @@ int main(){
         printf("HD");
     }
 
+    printf("\n");
+
     return 0;
 }
