@@ -20,7 +20,7 @@ int main() {
     int val;
 
     for (int i = 1; i <= 10; i++) {
-        if (log10(i) + 1 == 2) {
+        if (log10(i) + 1 == 2) { // number of digits
             printf("%d |", i);
         } else {
             printf(" %d |", i);
