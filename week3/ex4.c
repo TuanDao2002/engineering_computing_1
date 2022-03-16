@@ -1,5 +1,6 @@
 #include<stdio.h>
 int main() {
+    // use percent to assign the number of spaces for a variable
     printf(" x |");
     for (int i = 1; i <= 10; i++) {
         printf("%5d", i);
