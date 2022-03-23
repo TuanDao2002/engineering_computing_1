@@ -33,7 +33,7 @@ int main() {
 			} else if (col == 1) {
 				printf("%4d", num + 1 - row);
 			} else {
-				printf("    "); // 4 spaces
+				printf("%*c", 4, ' '); // 4 spaces
 			}
 		}
 
