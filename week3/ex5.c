@@ -8,9 +8,9 @@ int main() {
     for (int i = num; i > 0; i--) {
         for (int j = i * 2 - 1; j > 0; j--) {
             if (j + 1 - i > 0) { // descending order
-                printf("%d ", j + 1 - i);
+                printf("%2d ", j + 1 - i);
             } else { // ascending order
-                printf("%d ", i + 1 - j);
+                printf("%2d ", i + 1 - j);
             }
         }
         printf("\n");
