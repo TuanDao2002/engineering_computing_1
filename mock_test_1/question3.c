@@ -45,7 +45,7 @@ int main() {
 		/*For each row*/
 		if (row == 1) { // if this is the first row, print out all values from 1 to num in a single line
 			for (int block = 1; block <= num; block++) {
-				printf("%3d", block);
+				printf("%4d", block);
 			}
 
 			// move to the next line
@@ -57,17 +57,17 @@ int main() {
 
 		// if this is not the first row, print out all values backward from row to 1
 		for (int block = row; block >= 1; block--) {
-			printf("%3d", block);
+			printf("%4d", block);
 		}
 
 		// print out block of whitespaces
 		for (int block = 1; block <= num - row - 1; block++) {
-			printf("   ");
+			printf("    ");
 		}
 
 		// if this is not the last row, print out a pattern value at the end of the row
 		if (row != num) {
-			printf("%3d\n", num + 1 - row);
+			printf("%4d\n", num + 1 - row);
 		}
 	}
 
