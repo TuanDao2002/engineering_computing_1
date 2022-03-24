@@ -16,24 +16,33 @@
 
 int main() {
 	const int SIZE = 20, MIN = 0, MAX = 100;
+
+	/* question 1*/
+	// set the random seed
 	srand(time(NULL));
 
+	// generate an array of 20 random integers between 0 and 100
 	int random_arr[SIZE];
 	for (int i = 0; i < SIZE; i++) {
 		random_arr[i] = MIN + rand() % (MAX - MIN + 1);
 	}
 
+	// print all elements in the array
 	printf("All elements in the array:\n");
 	for (int i = 0; i < SIZE; i++) {
 		printf("%d ", random_arr[i]);
 	}
 	printf("\n");
 
+	/* question 2 */
 	int count = 0;
 	printf("All elements between 50 and 100: \n");
+	// print out all elements between 50 ad 100
 	for (int i = 0; i < SIZE; i++) {
 		if (random_arr[i] >= 50 && random_arr[i] <= 100) {
 			printf("%d ", random_arr[i]);
+
+			// increase the number of satisfied elements
 			count++;
 		}
 	}
