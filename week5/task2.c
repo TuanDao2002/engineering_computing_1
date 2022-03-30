@@ -31,7 +31,7 @@ int main(){
 }
 #endif
 
-#if 1
+#if 0
 int main() {
     int words = 0;
     char sentence[100];
@@ -43,6 +43,27 @@ int main() {
 
     for (int i = 0; sentence[i + 1] != '\0'; i++) {
         if (sentence[i] == ' ' && sentence[i + 1] != ' ') {
+            words++;
+        }
+    }
+
+    printf("Number of words: %d", words);
+
+    return 0;
+}
+#endif
+
+#if 1
+
+int main() {
+    int words = 0;
+    char sentence[100];
+
+    printf("Enter a sentence: ");
+    scanf("%[^\n]s", &sentence);
+
+    for (int i = 0; sentence[i] != '\0'; i++) {
+        if (sentence[i] != ' ' && (sentence[i - 1] == ' ' || i == 0)) {
             words++;
         }
     }
