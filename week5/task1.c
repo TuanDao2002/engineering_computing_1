@@ -1,4 +1,6 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 #define SIZE 50
 
 int main(){
@@ -35,6 +37,8 @@ int main(){
         if (ispunct(str[i])) {
             punctuations++;
         }
+
+        str[i] = isupper(str[i]) ? tolower(str[i]) : toupper(str[i]);
     } 
 
     printf("String's length is: %d\n", count);
