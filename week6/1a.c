@@ -2,7 +2,7 @@
 
 int main(){
     char ch = 'A';
-    int *ptr = &ch;
+    char *ptr = &ch;
 
     *ptr = 'B';
     printf("%c", ch);
