@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
+#if 0
 int main(){
     char input[50]; // cannot use char* pointer for scanf
     printf("Enter a string: ");
@@ -61,3 +62,43 @@ int main(){
 
     return 0;
 }
+#endif
+
+#if 1
+#include <stdio.h>
+#include <string.h>
+#define STRSIZE 100
+
+int main() {
+    char str[STRSIZE];
+    printf("Enter a string: ");
+    scanf("%[^\n]s", str);
+
+    char find[STRSIZE];
+    printf("Find: ");
+    scanf(" %[^\n]s", find);
+
+    char replace[STRSIZE];
+    printf("Replace: ");
+    scanf(" %[^\n]s", replace);
+
+    char result[STRSIZE];
+    int index = 0;
+    // for loop to go through all characters of the input string
+    for (int i = 0; str[i] != '\0'; i++) {            
+        if (strncmp(find, str + i, strlen(find)) != 0) { // if the find string is not detected
+            // str + i: the substring from index i, e.g. (str + 2) of str "hello world" = "llo world"
+            result[index++] = str[i]; // put all the unmatched characters into the result string
+        } else { // Otherwise, put the replace string into result string
+            for (int j = 0; replace[j] != '\0'; j++) {
+                result[index++] = replace[j];
+            }
+        }
+    }
+
+    printf("The string after replacement: %s\n", result);
+
+    return 0;
+}
+
+#endif
