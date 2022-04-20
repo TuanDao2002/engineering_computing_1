@@ -1,3 +1,4 @@
+#include<stdio.h>
 void printarray(int array[], int size){
     printf("Print Array elements in normal order: \n");
     for (int i = 0; i < size; i++) {

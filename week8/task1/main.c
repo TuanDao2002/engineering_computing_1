@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include "myarray.h"
-#include "myarray.c"
+
 #define SIZE 5
 
+// compile: gcc main.c myarray.c;./a.exe
 int main(void) {
     int arr[SIZE] = {12, 7, -3, 4, 1};
     printarray(arr, SIZE);
