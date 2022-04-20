@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
+#if 0
 int find(char* text, char* keyword) {
     char* p_text = NULL;
     char* p_keyword = keyword;
@@ -21,6 +22,19 @@ int find(char* text, char* keyword) {
 
     return 0;
 }
+
+#endif
+
+// use built-in strncmp
+int find(char text[], char keyword[]) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (strncmp(text + i, keyword, strlen(keyword)) == 0) {
+            return 1;
+        }
+    }
+
+    return 0;
+};
 
 int main(void) {
     char text[50];
