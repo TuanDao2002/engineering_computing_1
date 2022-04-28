@@ -9,7 +9,11 @@ int main(void) {
     printarray(arr, SIZE);
     printreversearray(arr, SIZE);
     printf("%d\n", maximumelement(arr, SIZE));
-    if (findinteger(arr, SIZE, -3)) {
+
+    int num;
+    printf("Enter a number to check: ");
+    scanf("%d", &num);
+    if (findinteger(arr, SIZE, num)) {
         printf("Found the integer in the array\n");
     } else {
         printf("Cannot find the integer in the array\n");
