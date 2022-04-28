@@ -72,30 +72,33 @@ int main(){
 int main() {
     char str[STRSIZE];
     printf("Enter a string: ");
-    scanf("%[^\n]s", str);
+    scanf("%[^\n]%*c", str); // use this to not remove trailing space in input
 
     char find[STRSIZE];
     printf("Find: ");
-    scanf(" %[^\n]s", find);
+    scanf("%[^\n]%*c", find);
 
     char replace[STRSIZE];
     printf("Replace: ");
-    scanf(" %[^\n]s", replace);
+    scanf("%[^\n]%*c", replace);
 
     char result[STRSIZE];
     int index = 0;
     // for loop to go through all characters of the input string
     for (int i = 0; str[i] != '\0'; i++) {            
-        if (strncmp(find, str + i, strlen(find)) != 0) { // if the find string is not detected
+        if (strncmp(str + i, find, strlen(find)) != 0) { // if the find string is not detected
             // str + i: the substring from index i, e.g. (str + 2) of str "hello world" = "llo world"
             result[index++] = str[i]; // put all the unmatched characters into the result string
         } else { // Otherwise, put the replace string into result string
             for (int j = 0; replace[j] != '\0'; j++) {
                 result[index++] = replace[j];
             }
+
+            i += strlen(find) - 1; // move to the end of find string
         }
     }
 
+    result[index] = '\0'; // add termination at the end of result string
     printf("The string after replacement: %s\n", result);
 
     return 0;
