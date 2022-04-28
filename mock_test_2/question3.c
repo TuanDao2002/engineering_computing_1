@@ -5,11 +5,11 @@
 
 int main() {
     char source[STRSZE], dest[STRSZE];
-    char* p;
     char *months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     printf("Enter a date in dd/mm/yyyy: ");
     scanf("%s", &source);
 
+    #if 0
     int index = 0;
 
     p = strtok(source, "/");
@@ -32,6 +32,25 @@ int main() {
     }
 
     dest[index] = '\0';
+    #endif
+
+    #if 1
+
+    char* token = strtok(source, "/");
+    // must use strcpy to add the first token to dest string. Otherwise there will be garbage characters
+    strcpy(dest, token); 
+    strcat(dest, " ");
+    
+    token = strtok(NULL, "/");
+    int monthIndex = atoi(token) - 1;
+    strcat(dest, months[monthIndex]);
+    strcat(dest, " ");
+
+    token = strtok(NULL, "/");
+    strcat(dest, token);
+    strcat(dest, "\0");
+
+    #endif
 
     printf("Converted format: %s\n", dest);
     return 0;
