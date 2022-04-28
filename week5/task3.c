@@ -1,14 +1,14 @@
 #include<stdio.h>
 #include<string.h>
-
+#define SIZE 50
 int main(){
-    char names[5][50];
-    char name[50];
-
-    for (int i = 0; i < 5; i++) {
+    //Declare arrays of 5 strings
+    char names[5][SIZE]; 
+  
+    //Qa. Input names and print out first names
+    for (int i = 0; i < 5; i++){
         printf("Enter full name %d: ", i + 1);
-        scanf("%[^\n]%*c", &name); // get multiple input with spaces without exit program
-        strcpy(names[i], name);
+        scanf(" %[^\n]s", names[i]); // have a space before so it will skip newline character of previous input and not exit program
     }
 
     printf("The first names are ");
