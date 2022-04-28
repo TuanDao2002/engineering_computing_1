@@ -17,7 +17,7 @@ int main(){
     for (int j = 0; j < 5; j++) {
         // use strcpy to copy the full name to the temp variable (as strtok is a function returns pointer to the first token)
         // cannot assign directly as the temp variable has fixed size (cannot use char* pointer due to pass by reference)
-        strcpy(temp_name_to_token, names[j]); 
+        strcpy(temp_name_to_token, names[j]); // use temp variable as strtok will tokenize the string name, other names beside first name will not exist
 
         // get the first name of the full name with strtok
         first_name = strtok(temp_name_to_token, " ");

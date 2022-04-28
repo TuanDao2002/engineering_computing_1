@@ -5,8 +5,8 @@ int main(){
     char input[50];
     
     printf("Enter a string: ");
-    scanf("%[^\n]%*c", &input); // get multiple input with spaces without exit program
-
+    scanf("%[^\n]s", &input);
+    
     int len = strlen(input);
     for (int i = 0; i < len / 2; i++) {
         if (input[i] != input[len - 1 - i]) {
