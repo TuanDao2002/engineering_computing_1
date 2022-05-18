@@ -16,7 +16,7 @@ int main() {
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    srand(time(0));
+    srand(time(NULL));
     int arr[ARR_SIZE];
     for (int i = 0; i < ARR_SIZE; i++) {
         arr[i] = rand() % (n + 1);
