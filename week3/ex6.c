@@ -7,6 +7,7 @@ int main() {
         scanf("%d", &num);
     } while(num < 1 || num > 15);
 
+    /*
     for (int i = 1; i <= num; i++) {
         for (int j = 1; j <= num * 2 - 1; j++) {
             printf(" ");
@@ -18,6 +19,23 @@ int main() {
                 printf("  ");
             }
         }
+        printf("\n");
+    }
+    */
+
+    for (int row = 1; row <= num; row++) {
+        for (int col = num; col >= 1; col--) {
+            if (col > row) {
+                printf("   ");
+            } else {
+                printf("%3d", col);
+            }
+        }
+
+        for (int col = 2; col <= row; col++) {
+            printf("%3d", col);   
+        }
+
         printf("\n");
     }
     return 0;
