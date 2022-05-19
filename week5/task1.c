@@ -12,39 +12,53 @@ int main(){
     int count = 0;
     int uppercase = 0;
     int lowercase = 0;
-    int total_letters = 0;
+    int letters = 0;
     int digits = 0;
     int punctuations = 0;
     for (int i = 0; str[i] != '\0'; i++) {
         count++;
 
-        if (isupper(str[i])) {
+        // if (isupper(str[i])) {
+        //     uppercase++;
+        // } 
+
+        if (str[i] >= 'A' && str[i] <= 'Z') {
             uppercase++;
-        } 
+            str[i] = tolower(str[i]);
+            continue;
+        }
         
-        if (islower(str[i])) {
+        // if (islower(str[i])) {
+        //     lowercase++;
+        // }
+        
+        if (str[i] >= 'a' && str[i] <= 'z') {
             lowercase++;
+            str[i] = toupper(str[i]);
+            continue;
         }
 
-        if (isalpha(str[i])) {
-            total_letters++;
-        }
+        // if (isdigit(str[i])) {
+        //     digits++;
+        // }
 
-        if (isdigit(str[i])) {
+        if (str[i] >= '0' && str[i] <= '9') {
             digits++;
+            continue;
         }
 
         if (ispunct(str[i])) {
             punctuations++;
+            continue;
         }
-
-        str[i] = isupper(str[i]) ? tolower(str[i]) : toupper(str[i]);
     } 
+
+    letters = uppercase + lowercase;
 
     printf("String's length is: %d\n", count);
     printf("String's number of uppercase letters is: %d\n", uppercase);
     printf("String's number of lowercase letters is: %d\n", lowercase);
-    printf("String's number of total letters is: %d\n", total_letters);
+    printf("String's number of total letters is: %d\n", letters);
     printf("String's number of digit letters is: %d\n", digits);
     printf("String's number of punctuations is: %d\n", punctuations);
 
