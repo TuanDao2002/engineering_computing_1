@@ -4,13 +4,13 @@
 
 #define ARR_SIZE 4
 
-struct time {
+typedef struct { // use typedef to not call "struct time" again
     int hh;
     int mm;
     int ss;
-};
+} time;
 
-double timeDifference(struct time t1, struct time t2) {
+double timeDifference(time t1, time t2) {
     double secondDifference = t1.ss - t2.ss;
     double minuteDifference = t1.mm - t2.mm;
     double hourDifference = t1.hh - t2.hh;
@@ -29,7 +29,7 @@ double timeDifference(struct time t1, struct time t2) {
 }
 
 int main() {
-    struct time t1, t2;
+    time t1, t2;
     printf("Enter the first time point: ");
     scanf("%d:%d:%d", &t1.hh, &t1.mm, &t1.ss);
     
@@ -39,13 +39,13 @@ int main() {
 
     printf("Time Difference: %.2lf hours.\n", timeDifference(t1, t2));
 
-    struct time timeArr[ARR_SIZE];
+    time timeArr[ARR_SIZE];
     for (int i = 0; i < ARR_SIZE; i++) {
         printf("Enter the time point %d: ", i + 1);
         scanf("%d:%d:%d", &timeArr[i].hh, &timeArr[i].mm, &timeArr[i].ss);
     }
 
-    struct time latestTime = timeArr[0];
+    time latestTime = timeArr[0];
     for (int i = 1; i < ARR_SIZE; i++) {
         if (timeDifference(timeArr[i], latestTime) > 0) {
             latestTime = timeArr[i];

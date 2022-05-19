@@ -12,7 +12,7 @@ void swap(int* a, int* b) {
 
 int main(){
     //Qa
-    int x = 20;
+    int x = 10;
     printf("x before function call: %d \n", x);
     myFunc(&x);
     printf("x after function call: %d \n", x);

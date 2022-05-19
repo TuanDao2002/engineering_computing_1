@@ -83,13 +83,13 @@ void printNumOfDayInYear(char str[]) {
         }
     }
 
-    printf("Day %d\n", dayInYear);
+    printf("It is day %d within year %d\n", dayInYear, year);
 }
 
 int main() {
     char str[STRSZE];
     printf("Enter a string: ");
-    scanf("%s", &str);
+    scanf("%[^\n]s", &str);
     printf("Number of alphabetical characters: %d\n", numberOfAlpha(str));
     printf("Average value of all digits: %lf\n", averageDigits(str));
     removeNonDigits(str);

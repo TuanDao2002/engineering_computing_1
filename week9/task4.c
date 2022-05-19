@@ -24,9 +24,8 @@ char* convert2string2(int num, char* s) {
         return s;
     }
 
-    char* current_char = s;
-    char* next_char = convert2string2(num / 10, current_char);
-    
+    char* next_char = convert2string2(num / 10, s);
+
     *next_char = num % 10 + '0';
     next_char++;
     *next_char = '\0'; // terminate the string with '\0'
@@ -57,7 +56,7 @@ int main(){
     printf("\n");
 
     char int_str[20];
-    convert2string(n, int_str);
+    convert2string2(n, int_str);
     printf("Print out integer as string: %s\n", int_str);
     return 0;
 }
